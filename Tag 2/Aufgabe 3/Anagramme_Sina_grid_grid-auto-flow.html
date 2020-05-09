@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font: 150% sans-serif;
+      background: #ECF0F1;
+      margin-left: 80px;
+      margin-right: 80px;
+      margin-top: 200px;
+      color: #ECF0F1;
+
+    }
+
+    .raster > * {
+      background: #04B4AE;
+      border: 0.5px #2C3E50 solid;
+      padding: 20px;
+      text-align: center;
+      align-content: center;
+      justify-content: center;
+      font-size: 2em;
+    }
+
+
+    .raster {
+      display: grid;
+      grid-auto-flow: column;
+      /*grid-template-rows: 1fr 1fr 1fr;*/
+      /*grid-gap: 20px;*/
+    }
+
+
+    @media screen and (max-width: 48em){
+body{
+background-color: black;
+}
+
+.raster{
+  color: black;
+  align-content: center;
+}
+.e{
+  grid-column-start: 1;
+}
+
+}
+
+  </style>
+  <title>Gridlayout</title>
+</head>
+
+<body>
+
+<div class="raster">
+  <div class="a">I</div>
+  <div class="b">N</div>
+  <div class="c">S</div>
+  <div class="d">E</div>
+  <div class="e">L</div>
+  <div class="f">N</div>
+</div>
+
+
+</body>
+</html>
