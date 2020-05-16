@@ -34,10 +34,6 @@ font-family: 'Source Code Pro', monospace;
    ". . . . . . . . dauern dauern dauern"
 }
 
-/*   ". . . . . muss . . . . ."
-   ". . . . . herz . . . . ."*/
-
-
 .stu {
   grid-area: stu;
   margin: auto;
@@ -93,6 +89,7 @@ font-family: 'Source Code Pro', monospace;
 .bluete {
   grid-area: bluete;
 grid-template-rows: 300px;
+text-align: end;
 }
 
 .jugend{
@@ -111,6 +108,7 @@ transform: rotate(6deg);
 .tugend {
   grid-area: tugend;
   transform: rotate(-4deg);
+  text-align: end;
 }
 
 .zeit {
@@ -122,6 +120,25 @@ transform: rotate(3deg);
   grid-area: dauern;
 }
 
+
+.teil2 {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 120px 1fr 300px 800px 200px 1fr 500px 400px 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+  grid-template-areas:
+  ". . . . . muss . . . . ."
+  ". . . . . herz . . . . ."
+  ". . . . . rufe . . . . ."
+  ". . . . . . . . . bereit bereit"
+  "neu . . . . . . . . . ."
+  ". . . . tapferkeit bindungen bindungen . . . ."
+  ". . . . . . . . . . ."
+  "anfang anfang anfang anfang anfang anfang anfang anfang anfang . ."
+  "zauber zauber zauber zauber zauber zauber zauber zauber zauber zauber zauber"
+}
+
 .muss {
   grid-area: muss;
   text-align: center;
@@ -131,9 +148,49 @@ transform: rotate(3deg);
   grid-area: herz;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  font-size: 200%;
+  font-size: 400%;
   text-align: center;
   margin: auto;
+}
 
+.rufe {
+  grid-area: rufe;
+  align-self: end;
+  text-align: center;
+}
+
+.bereit {
+  grid-area: bereit;
+  text-align: end;
+  align-self: center;
+line-height: 3em;
+margin-top: 300px;
+}
+
+.neu {
+  grid-area: neu;
+  line-height: 3em;
+}
+
+.tapferkeit {
+  grid-area: tapferkeit;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.bindungen {
+  grid-area: bindungen;
+  align-self: end;
+
+}
+.anfang {
+  grid-area: anfang;
+  font-size: 550%;
+}
+
+.zauber {
+  grid-area: zauber;
+  font-size: 550%;
+  text-align: end;
 
 }
