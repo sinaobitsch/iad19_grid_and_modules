@@ -1,0 +1,95 @@
+html{
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+font-family: 'Source Code Pro', monospace;
+   background-color: white;
+ }
+
+ p {
+   letter-spacing: 0.1em;
+   line-height: 1.5;
+ }
+
+ .raster {
+   height:calc(100vh - 20px);
+   display: grid;
+   grid-template-columns: 1fr minmax(100px 1fr) minmax(200px 1fr);
+   grid-template-rows: 1fr 1fr minmax(200px 1fr);
+   grid-gap:10px;
+   grid-template-areas:
+   "stufen . ."
+   ". . bluete"
+   ". weisheit .";
+ }
+
+.stufen {
+grid-area: stufen;
+font-size: 9em;
+font-weight: bold;
+letter-spacing: 0.3px;
+}
+
+.bluete {
+  grid-area: bluete;
+  letter-spacing: 0.3px;
+}
+
+.weisheit{
+  grid-area: weisheit;
+  letter-spacing: 0.3px;
+  writing-mode: vertical-rl;
+transform: rotate(180deg);
+}
+
+@media all and (max-width: 48em) /*tablet*/ {
+  .raster {
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr minmax(200px 1fr);
+       grid-gap:10px;
+       grid-template-areas:
+       "stufen stufen ."
+       ". bluete bluete "
+       "weisheit . .";
+    }
+    .stufen{
+      font-size: 8.5em;
+    }
+    .bluete{
+      font-size: 16px;
+    }
+    .weisheit{
+      margin: auto;
+      font-size: 16px;
+    }
+}
+
+
+@media all and (max-width: 39em) /*mobil*/ {
+  .raster {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+       grid-gap:10px;
+       grid-template-areas:
+       "stufen stufen"
+       ". bluete"
+       "weisheit weisheit";
+    }
+    .stufen{
+font-size: 7em;
+    }
+    .bluete{
+      font-size: 16px;
+    }
+    .weisheit{
+      font-size: 16px;
+    transform: rotate(270deg);
+    margin-left: 100px;
+    }
+}

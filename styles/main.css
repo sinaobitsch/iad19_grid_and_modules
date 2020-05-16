@@ -1,11 +1,5 @@
 html{
-
-}
-@media only screen and (min-width: 600px) { /* oder rem/em */
-  html {
-    font-size: 90%;
-
-    }
+font-size: 15px;
 }
 
 * {
@@ -15,37 +9,91 @@ html{
 body {
 font-family: 'Source Code Pro', monospace;
    background-color: white;
+   margin-left: 20px;
+   margin-right: 20px;
  }
 
- .raster {
+ .raster1 {
    display: grid;
-   grid-template-columns: minmax(10px, 1fr) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr minmax(10px, 1fr) ;
+   grid-template-columns: repeat(11, 1fr);
    grid-template-rows: 1fr;
    grid-gap: 10px;
    margin-top: 33vh;
+
+   grid-template-areas:
+   ". . . . . stu . . . . ."
+   ". . . . . fen . . . . ."
+   ". . . . . . . . . . ."
+   ". . . . . . . . . bluete bluete"
+   "jugend jugend jugend . . . . . . . ."
+   ". . . . . . . . . . ."
+   ". . . lebensstufe lebensstufe lebensstufe lebensstufe . . . ."
+   ". . . . . weisheit weisheit weisheit weisheit . ."
+   ". . . . . . . . . tugend tugend"
+   ". . . . . . zeit zeit . . ."
+   ". . . . . . . . dauern dauern dauern"
+   ". . . . . muss . . . . ."
+   ". . . . . herz . . . . ."
+
  }
 
-.st {
-  grid-column-start: 7;
-  grid-column-end: 8;
-}
-.uf {
-  grid-column-start: 7;
-  grid-column-end: 9;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  writing-mode: vertical-lr;
-  justify-content: end;
-}
-.en {
-  grid-column-start: 8;
-  grid-column-end: 9;
-  grid-row-start: 4;
-  grid-row-end: 5;
+.stu {
+  grid-area: stu;
+  margin: auto;
+
 }
 
-p {
-  font-size: 24px;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
+.fen {
+  grid-area: fen;
+  writing-mode: vertical-lr;
+  margin-left: 50px;
+}
+
+
+.bluete {
+  grid-area: bluete;
+grid-template-rows: 300px;
+}
+
+.jugend{
+  grid-area: jugend;
+/*  writing-mode: vertical-rl;
+transform: rotate(180deg);*/
+}
+.lebensstufe {
+  grid-area: lebensstufe;
+transform: rotate(-4deg);
+}
+.weisheit {
+  grid-area: weisheit;
+transform: rotate(6deg);
+}
+.tugend {
+  grid-area: tugend;
+  transform: rotate(-4deg);
+}
+
+.zeit {
+  grid-area: zeit;
+transform: rotate(3deg);
+}
+
+.dauern {
+  grid-area: dauern;
+}
+
+.muss {
+  grid-area: muss;
+  text-align: center;
+}
+
+.herz {
+  grid-area: herz;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 200%;
+  text-align: center;
+  margin: auto;
+
+
 }
