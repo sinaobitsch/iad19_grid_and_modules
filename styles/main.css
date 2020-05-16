@@ -40,6 +40,49 @@ font-family: 'Source Code Pro', monospace;
 .stu {
   grid-area: stu;
   margin: auto;
+  overflow: hidden;
+
+
+
+  width: 2.4em;
+  opacity: 0;
+  animation: type3 3s steps(4, end), blink .5s step-end infinite alternate;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes type3 {
+0% {
+  width: 0;
+}
+1% {
+  opacity: 1;
+}
+100% {
+  opacity: 1;
+}
+}
+@-webkit-keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
 
 }
 
