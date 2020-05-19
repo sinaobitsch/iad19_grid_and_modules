@@ -25,7 +25,7 @@ font-family: 'Source Code Pro', monospace;
    ". . . . . fen . . . . ."
    ". . . . . . . . . . ."
    ". . . . . . . . . bluete bluete"
-   "jugend jugend jugend . . . . . . . ."
+   "jugend jugend jugend jugend . . . . . . ."
    ". . . . . . . . . . ."
    ". . . lebensstufe lebensstufe lebensstufe lebensstufe . . . ."
    ". . . . . weisheit weisheit weisheit weisheit . ."
@@ -62,7 +62,6 @@ font-family: 'Source Code Pro', monospace;
 
 .fen {
   grid-area: fen;
-  writing-mode: vertical-lr;
   margin-left: 50px;
     overflow: hidden;
 
@@ -71,16 +70,23 @@ font-family: 'Source Code Pro', monospace;
   animation: type4 1s steps(3, end);
   animation-delay: 0.2s;
   animation-fill-mode: both;
+
 }
 @keyframes type4 {
 0% {
   width: 0;
+  transform: rotate(90deg);
+
 }
 1% {
   opacity: 1;
+  transform: rotate(90deg);
+
 }
 100% {
   opacity: 1;
+  transform: rotate(90deg);
+
 }
 }
 
@@ -192,5 +198,98 @@ margin-top: 300px;
   grid-area: zauber;
   font-size: 550%;
   text-align: end;
+
+}
+
+
+.teil3 {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 120px 600px 300px 1fr 1fr 1fr 400px 300px 800px 600px 1200px;
+  grid-gap: 10px;
+
+  grid-template-areas:
+  ". . hilft hilft hilft . . . . . ."
+  ". . . . . . leben . . . ."
+  ". sollen sollen . . . . . . heiter ."
+  ". . raum1 raum1 raum1 raum1 . . . . ."
+  ". . . . . . um um . . ."
+  ". . . . raum2 raum2 raum2 . . durchschreiten durchschreiten"
+  ". . heimat . . . . . . . ."
+  ". . . fesseln . . . . . . ."
+  "engen engen . . . . . . . . ."
+  ". . . . . stuf . . . . ."
+  ". . . . . heben . . . . ."
+  ". . . . . weiten . . . . ."
+
+
+
+}
+
+.hilft {
+  grid-area: hilft;
+}
+
+.leben {
+  grid-area: leben;
+}
+
+.sollen {
+  grid-area: sollen;
+}
+.heiter {
+  grid-area: heiter;
+}
+
+.raum1 {
+  grid-area: raum1;
+  font-size: 1200%;
+}
+
+.um {
+  grid-area: um;
+  font-size: 1200%;
+  transform: rotate(90deg);
+}
+.raum2 {
+  grid-area: raum2;
+  font-size: 1200%;
+  align-self: end;
+  text-align: end;
+}
+.durchschreiten {
+  grid-area: durchschreiten;
+  text-align: end;
+  align-self: end;
+  margin-bottom: 45px;
+}
+
+.heimat {
+  grid-area: heimat;
+  text-align: center;
+  text-align: end;
+  align-self: end;
+
+}
+.fesseln {
+  grid-area: fesseln;
+}
+.engen {
+  grid-area: engen;
+}
+.stuf {
+  grid-area: stuf;
+  /*transform: rotate(30deg);
+  transform-origin:top;*/
+  text-align: center;
+}
+.heben {
+  grid-area: heben;
+  text-align: center;
+
+}
+.weiten {
+  grid-area: weiten;
+  text-align: center;
 
 }
