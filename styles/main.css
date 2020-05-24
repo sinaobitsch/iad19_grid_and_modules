@@ -16,7 +16,7 @@ font-family: 'Source Code Pro', monospace;
  .raster1 {
    display: grid;
    grid-template-columns: repeat(11, 1fr);
-   grid-template-rows: 1fr 1fr 600px 300px 300px 150px 150px 150px 600px 150px 600px;
+   grid-template-rows: 1fr 1fr 600px 300px 300px 150px 600px 150px 600px 150px 600px;
    grid-gap: 10px;
    margin-top: 40vh;
 
@@ -119,7 +119,7 @@ transform: rotate(6deg);
 
 .zeit {
   grid-area: zeit;
-transform: rotate(3deg);
+transform: rotate(4deg);
 }
 
 .dauern {
@@ -130,7 +130,7 @@ transform: rotate(3deg);
 .teil2 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 120px 30px 300px 800px 200px 1fr 500px 400px 1fr 1fr 1fr;
+  grid-template-rows: 120px 30px 300px 800px 600px 1fr 500px 400px 1fr 1fr 1fr;
   grid-gap: 10px;
 
   grid-template-areas:
@@ -205,7 +205,7 @@ margin-top: 300px;
 .teil3 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 120px 600px 300px 1fr 1fr 1fr 400px 300px 800px 600px 1200px 600px 1fr;
+  grid-template-rows: 120px 600px 500px 1fr 1fr 1fr 400px 400px 200px 400px 800px 600px 1fr;
   grid-gap: 10px;
 
   grid-template-areas:
@@ -216,6 +216,7 @@ margin-top: 300px;
   ". . . . . . um um . . ."
   ". . . . raum2 raum2 raum2 . . durchschreiten durchschreiten"
   ". . heimat . . . . . . . ."
+  ". . . . . . . . . . ."
   ". . . fesseln . . . . . . ."
   "engen engen . . . . . . . . ."
   ". . . . . stuf . . . . ."
@@ -292,8 +293,10 @@ margin-top: 300px;
 .teil4 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 260px 600px 1fr 400px 400px 400px 400px 300px 800px 600px 1200px 600px 1fr;
+  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 420px 280px 100px 100px 600px 600px 120px 110px 200px 800px;
   grid-gap: 10px;
+  margin-top: 600px;
+  margin-bottom: 40px;
 
   grid-template-areas:
   ". . heimisch heimisch heimisch . . . . . ."
@@ -302,6 +305,19 @@ margin-top: 300px;
   ". . . . . . . . . . erschlaffen"
   ". reise reise reise reise reise reise reise reise reise ."
   ". entraffen entraffen entraffen entraffen entraffen entraffen entraffen entraffen entraffen ."
+  ". vielleicht . . . . . . . . ."
+  ". . . todesstunde . . . . . . ."
+  ". . . . neuen neuen neuen neuen neuen neuen neuen"
+  ". . . . raeumen raeumen raeumen raeumen raeumen raeumen raeumen"
+  ". . . . raeumen raeumen raeumen raeumen raeumen raeumen raeumen"
+  ". . . . . . . . senden senden senden"
+  "ruf . . . . an . . . . enden"
+  ". . . . . . . . . . ."
+  ". . . . . wohlan . . . . ."
+  ". . . . . herz2 . . . . ."
+  ". . . . . nimm . . . . ."
+  "gesunde gesunde gesunde gesunde gesunde gesunde gesunde . . . ."
+
 }
 
 .heimisch {
@@ -337,5 +353,74 @@ position: absolute;
 .entraffen {
   grid-area: entraffen;
   text-align:end;
+}
+.vielleicht {
+  grid-area: vielleicht;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.todesstunde {
+  grid-area: todesstunde;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.neuen {
+  grid-area: neuen;
+  font-size: 1200%;
+  align-self: start;
+  text-align: start;
+}
+.raeumen {
+  grid-area: raeumen;
+  font-size: 1200%;
+  align-self: start;
+  text-align: start;
+  transform: rotate(90deg);
+
+}
+.senden {
+  grid-area: senden;
+  text-align: end;
+
+}
+.ruf {
+  grid-area: ruf;
+  align-self: end;
+
+}
+.an {
+  grid-area: an;
+  align-self: end;
+}
+.enden {
+  grid-area: enden;
+  align-self: end;
+  text-align: end;
+}
+
+.wohlan {
+  grid-area: wohlan;
+  text-align: center;
+}
+
+.herz2 {
+  grid-area: herz2;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 400%;
+  text-align: center;
+  margin: auto;
+}
+
+.nimm {
+  grid-area: nimm;
+  align-self: end;
+  text-align: center;
+}
+.gesunde {
+  grid-area: gesunde;
+  font-size: 550%;
+  align-self: end;
 
 }
