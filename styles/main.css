@@ -124,6 +124,8 @@ transform: rotate(4deg);
 
 .dauern {
   grid-area: dauern;
+  text-align: end;
+
 }
 
 
@@ -317,7 +319,6 @@ margin-top: 300px;
   ". . . . . herz2 . . . . ."
   ". . . . . nimm . . . . ."
   "gesunde gesunde gesunde gesunde gesunde gesunde gesunde . . . ."
-
 }
 
 .heimisch {
@@ -422,5 +423,108 @@ position: absolute;
   grid-area: gesunde;
   font-size: 550%;
   align-self: end;
+}
+
+
+/*_______________________________________________*/
+
+
+@media all and (max-width: 39em) /*mobil*/ {
+
+  .raster1 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr 600px 300px 300px 150px 600px 150px 600px 150px 600px;
+    grid-gap: 10px;
+    margin-top: 40vh;
+
+    grid-template-areas:
+    ". . stu . ."
+    ". . fen . ."
+    ". . . . ."
+    ". . bluete bluete bluete"
+    "jugend jugend jugend jugend ."
+    ". . . . ."
+    ". lebensstufe lebensstufe lebensstufe ."
+    ". weisheit weisheit weisheit weisheit"
+    ". . . tugend tugend"
+    ". . zeit zeit ."
+    ". . . dauern dauern"
+ }
+
+ .teil2 {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: 120px 30px 300px 800px 600px 1fr 500px 400px 1fr 1fr 1fr;
+   grid-gap: 10px;
+
+   grid-template-areas:
+   ". muss muss muss ."
+   ". herz herz herz ."
+   ". rufe rufe rufe ."
+   ". . bereit bereit bereit"
+   "neu neu neu neu neu"
+   ". tapferkeit bindungen bindungen bindungen"
+   ". . . . ."
+   "anfang anfang anfang anfang anfang"
+   "zauber zauber zauber zauber zauber"
+ }
+
+ .teil3 {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: 120px 600px 500px 1fr 1fr 1fr 400px 400px 200px 400px 800px 600px 1fr;
+   grid-gap: 10px;
+
+   grid-template-areas:
+   "hilft hilft hilft hilft .."
+   ". leben leben leben ."
+   "sollen sollen . . heiter"
+   "raum1 raum1 raum1 raum1 raum1"
+   ". um um um ."
+   "raum2 raum2 . durchschreiten durchschreiten"
+   ". heimat heimat . ."
+   ". . . . ."
+   ". fesseln fesseln fesseln ."
+   "engen engen . . ."
+   ". stuf stuf stuf ."
+   ". heben heben heben ."
+   ". weiten weiten weiten ."
+ }
+
+ .teil4 {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 420px 280px 100px 100px 600px 600px 120px 110px 200px 800px;
+   grid-gap: 10px;
+   margin-top: 600px;
+   margin-bottom: 40px;
+
+   grid-template-areas:
+   "heimisch heimisch heimisch heimisch ."
+   ". heimisch2 heimisch2 heimisch2 ."
+   ". . . droht ."
+   ". . . . erschlaffen"
+   ". reise reise reise reise"
+   ". entraffen entraffen entraffen entraffen"
+   "vielleicht . . . ."
+   ". todesstunde . . ."
+   "neuen neuen neuen neuen neuen"
+   ". raeumen raeumen raeumen raeumen"
+   ". raeumen raeumen raeumen raeumen"
+   ". . senden senden senden"
+   "ruf . an enden enden"
+   ". . . . ."
+   ". wohlan wohlan wohlan ."
+   ". herz2 herz2 herz2 ."
+   ". nimm nimm nimm ."
+   "gesunde gesunde gesunde gesunde gesunde"
+ }
+
+
+
+
+
+
 
 }
