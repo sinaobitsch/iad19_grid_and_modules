@@ -16,15 +16,15 @@ font-family: 'Source Code Pro', monospace;
  .raster1 {
    display: grid;
    grid-template-columns: repeat(11, 1fr);
-   grid-template-rows: 1fr 1fr 600px 300px 300px 150px 600px 150px 600px 150px 600px;
+   grid-template-rows: 1fr 600px 200px 300px 150px 600px 150px 600px 150px 600px;
    grid-gap: 10px;
    margin-top: 40vh;
+   overflow: hidden;
 
    grid-template-areas:
    ". . . . . stu . . . . ."
-   ". . . . . fen . . . . ."
    ". . . . . . . . . . ."
-   ". . . . . . . . . bluete bluete"
+   ". . . . . . . . bluete bluete bluete"
    "jugend jugend jugend jugend . . . . . . ."
    ". . . . . . . . . . ."
    ". . . lebensstufe lebensstufe lebensstufe lebensstufe . . . ."
@@ -39,9 +39,9 @@ font-family: 'Source Code Pro', monospace;
   margin: auto;
   overflow: hidden;
 
-  width: 1.9em;
+  width: 3.7em;
   opacity: 0;
-  animation: type3 1s steps(3, end);
+  animation: type3 4s steps(6, end);
   animation-delay: 0s;
   animation-fill-mode: both;
 
@@ -60,46 +60,21 @@ font-family: 'Source Code Pro', monospace;
 
 
 
-.fen {
-  grid-area: fen;
-  margin-left: 50px;
-    overflow: hidden;
-
-  width: 2em;
-  opacity: 0;
-  animation: type4 1s steps(3, end);
-  animation-delay: 1s;
-  animation-fill-mode: both;
-
-}
-@keyframes type4 {
-0% {
-  width: 0;
-  transform: rotate(90deg);
-}
-1% {
-  opacity: 1;
-  transform: rotate(90deg);
-}
-100% {
-  opacity: 1;
-  transform: rotate(90deg);
-}
-}
-
-
 
 .bluete {
   grid-area: bluete;
 grid-template-rows: 300px;
 text-align: end;
-transition: all 10s ease;
+
+
 }
 .bluete.checkview.isinview {
-  transition: all 3s ease-out;
-  padding-top:calc(5rem);
-  color: cyan;
+  transition: 2s ease-out;
+  padding-top:calc(3rem);
+  color: white;
   animation-fill-mode: both;
+  animation-delay: 3s;
+
 }
 
 .jugend{
@@ -108,29 +83,18 @@ transition: all 10s ease;
 
 }
 .jugend.checkview.isinview {
-  transition: all 3s ease-out;
+  transition: all 6s ease-out;
   padding-top:calc(5rem);
-  color: cyan;
+  color: white;
+  animation-delay: 2s;
   animation-fill-mode: both;
+
 }
 .lebensstufe {
   grid-area: lebensstufe;
 transform: rotate(-4deg);
 }
 
-.lebensstufe.checkview.isinview{
-  animation-name: rotation;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-@keyframes rotation {
-
-  100% {
-   transform: rotate(20deg);
-  }
-}
 .weisheit {
   grid-area: weisheit;
 }
@@ -159,6 +123,8 @@ transform: rotate(4deg);
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: 120px 30px 300px 800px 600px 1fr 500px 400px 1fr 1fr 1fr;
   grid-gap: 10px;
+  overflow: hidden;
+
 
   grid-template-areas:
   ". . . . . muss . . . . ."
@@ -188,14 +154,13 @@ transform: rotate(4deg);
   animation-name: herz;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
-  animation-fill-mode: both;
 }
 @keyframes herz {
 0% {
 font-size: 400%;
 }
-23% {
-  font-size: 440%;
+20% {
+  font-size: 420%;
   color: #8A0829;
 }
 100% {
@@ -271,6 +236,8 @@ margin-top: 300px;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: 120px 600px 500px 1fr 1fr 1fr 400px 400px 200px 400px 800px 600px 1fr;
   grid-gap: 10px;
+  overflow: hidden;
+
 
   grid-template-areas:
   ". . hilft hilft hilft . . . . . ."
@@ -294,30 +261,38 @@ margin-top: 300px;
 
 .leben {
   grid-area: leben;
+  opacity: 0;
 
-  animation-name: lebenrund;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
 
 }
-@keyframes lebenrund {
-10% {
-  transform: rotate(0deg);
-  transform-origin: 0% 0%;
+
+.leben.checkview.isinview{
+  overflow: hidden;
+  height:1.1em;
+  word-wrap: break-word;
+  white-space: nowrap;
+  animation: typing1 2s steps(9) forwards;
+  animation-delay: 0.6s;
+}
+@keyframes typing1 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 9ch;
+  }
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-50% {
-  transform: rotate(180deg);
-  transform-origin: 0% 0%;
-
-}
-100% {
-  transform: rotate(360deg);
-  transform-origin: 0% 0%;
-
-}
-}
 
 .sollen {
   grid-area: sollen;
@@ -328,17 +303,17 @@ margin-top: 300px;
 
 .raum1 {
   grid-area: raum1;
-  font-size: 1200%;
+  font-size: 1000%;
 }
 
 .um {
   grid-area: um;
-  font-size: 1200%;
+  font-size: 1000%;
   transform: rotate(90deg);
 }
 .raum2 {
   grid-area: raum2;
-  font-size: 1200%;
+  font-size: 1000%;
   align-self: end;
   text-align: end;
 }
@@ -360,20 +335,21 @@ margin-top: 300px;
 }
 .engen {
   grid-area: engen;
-
-  animation-name: engen;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
+}
+.engen.checkview.isinview{
+    animation-name: engen;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
 }
 @keyframes engen {
 0% {
 letter-spacing: 0em;
 }
 
-
 100% {
-  letter-spacing: -0.2em;
+  letter-spacing: -0.17em;
 }
 }
 
@@ -392,30 +368,31 @@ letter-spacing: 0em;
   grid-area: weiten;
   text-align: center;
 
-  animation-name: weiten;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+}
+.weiten.checkview.isinview{
+    animation-name: weiten;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
 }
 
 @keyframes weiten {
-0% {
-letter-spacing: 0em;
-}
 
-80% {
-  letter-spacing: 6em;
+100% {
+  letter-spacing: 5em;
 }
-
 }
 
 .teil4 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 620px 300px 350px 100px 600px 600px 120px 110px 320px 800px;
+  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 520px 300px 350px 100px 600px 600px 120px 110px 320px 800px;
   grid-gap: 10px;
   margin-top: 600px;
   margin-bottom: 40px;
+  overflow: hidden;
+
 
   grid-template-areas:
   ". . heimisch heimisch heimisch . . . . . ."
@@ -484,13 +461,13 @@ position: absolute;
 
 .neuen {
   grid-area: neuen;
-  font-size: 1200%;
+  font-size: 1000%;
   align-self: start;
   text-align: start;
 }
 .raeumen {
   grid-area: raeumen;
-  font-size: 1200%;
+  font-size: 1000%;
   align-self: start;
   text-align: start;
   transform: rotate(90deg);
@@ -561,6 +538,7 @@ position: absolute;
   font-size: 400%;
   text-align: center;
   margin: auto;
+  font-weight: 400;
 
   animation-name: herz;
   animation-duration: 1.5s;
@@ -647,7 +625,7 @@ position: absolute;
  .teil3 {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 120px 600px 500px 200px 150px 90px 400px 400px 200px 400px 800px 600px 1fr;
+   grid-template-rows: 120px 600px 500px 200px 170px 90px 400px 400px 200px 400px 800px 600px 1fr;
    grid-gap: 10px;
 
    grid-template-areas:
@@ -676,9 +654,6 @@ position: absolute;
  .um {
    grid-area: um;
    font-size: 800%;
-   transform: rotate(90deg);
-   align-self: end;
-   text-align: start;
  }
  .raum2 {
    grid-area: raum2;
@@ -690,10 +665,30 @@ margin-bottom: 25px;
 align-self: baseline;
 }
 
+.weiten {
+  grid-area: weiten;
+  text-align: center;
+
+}
+.weiten.checkview.isinview{
+    animation-name: weiten;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes weiten {
+
+100% {
+  letter-spacing: 2em;
+}
+}
+
  .teil4 {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 225px 140px 100px 100px 600px 600px 120px 110px 200px 800px;
+   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 325px 140px 200px 100px 600px 600px 120px 110px 200px 800px;
    grid-gap: 10px;
    margin-top: 600px;
    margin-bottom: 40px;
