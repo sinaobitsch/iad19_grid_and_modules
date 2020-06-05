@@ -76,17 +76,14 @@ font-family: 'Source Code Pro', monospace;
 0% {
   width: 0;
   transform: rotate(90deg);
-
 }
 1% {
   opacity: 1;
   transform: rotate(90deg);
-
 }
 100% {
   opacity: 1;
   transform: rotate(90deg);
-
 }
 }
 
@@ -96,25 +93,58 @@ font-family: 'Source Code Pro', monospace;
   grid-area: bluete;
 grid-template-rows: 300px;
 text-align: end;
+transition: all 10s ease;
+}
+.bluete:hover {
+  transition: all 3s ease-out;
+  padding-top:calc(5rem);
+  color: cyan;
+  animation-fill-mode: both;
 }
 
 .jugend{
   grid-area: jugend;
-/*  writing-mode: vertical-rl;
-transform: rotate(180deg);*/
+  transition: all 10s ease;
+
+}
+.jugend:hover {
+  transition: all 3s ease-out;
+  padding-top:calc(5rem);
+  color: cyan;
+  animation-fill-mode: both;
 }
 .lebensstufe {
   grid-area: lebensstufe;
 transform: rotate(-4deg);
+
+animation-name: rotation;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-fill-mode: both;
+
+}
+
+@keyframes rotation {
+
+  100% {
+   transform: rotate(20deg);
+  }
 }
 .weisheit {
   grid-area: weisheit;
 transform: rotate(6deg);
+animation-name: rotation;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-fill-mode: both;
+animation-delay: 1.8s;
 }
 .tugend {
   grid-area: tugend;
   transform: rotate(-4deg);
   text-align: end;
+
+
 }
 
 .zeit {
@@ -137,7 +167,7 @@ transform: rotate(4deg);
 
   grid-template-areas:
   ". . . . . muss . . . . ."
-  ". . . . . herz . . . . ."
+  ". . . . herz herz herz . . . ."
   ". . . . . rufe . . . . ."
   ". . . . . . . . . bereit bereit"
   "neu . . . . . . . . . ."
@@ -159,6 +189,23 @@ transform: rotate(4deg);
   font-size: 400%;
   text-align: center;
   margin: auto;
+
+  animation-name: herz;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+@keyframes herz {
+0% {
+font-size: 400%;
+}
+23% {
+  font-size: 440%;
+  color: #8A0829;
+}
+100% {
+  font-size: 400%;
+}
 }
 
 .rufe {
@@ -194,15 +241,35 @@ margin-top: 300px;
 .anfang {
   grid-area: anfang;
   font-size: 550%;
+  animation-name: seitenflow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
 }
+
 
 .zauber {
   grid-area: zauber;
   font-size: 550%;
   text-align: end;
-
+  animation-name: seitenflow
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  animation-direction: alternate;
+}
+/*
+@keyframes seitenflow {
+0% {
+  transform:translate(0%)
 }
 
+100% {
+  transform:translate(100%)
+}
+}*/
 
 .teil3 {
   display: grid;
@@ -223,7 +290,7 @@ margin-top: 300px;
   "engen engen . . . . . . . . ."
   ". . . . . stuf . . . . ."
   ". . . . . heben . . . . ."
-  ". . . . . weiten . . . . ."
+  "weiten weiten weiten weiten weiten weiten weiten weiten weiten weiten weiten"
 }
 
 .hilft {
@@ -232,6 +299,23 @@ margin-top: 300px;
 
 .leben {
   grid-area: leben;
+
+  animation-name: lebenrund;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+@keyframes lebenrund {
+10% {
+  transform: rotate(0deg);
+}
+
+50% {
+  transform: rotate(180deg);
+}
+100% {
+  transform: rotate(360deg);
+}
 }
 
 .sollen {
@@ -275,7 +359,25 @@ margin-top: 300px;
 }
 .engen {
   grid-area: engen;
+
+  animation-name: engen;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
+@keyframes engen {
+0% {
+letter-spacing: 0em;
+}
+
+20% {
+  letter-spacing: -0.15em;
+}
+80% {
+  letter-spacing: -0.1em;
+}
+}
+
 .stuf {
   grid-area: stuf;
   /*transform: rotate(30deg);
@@ -290,6 +392,24 @@ margin-top: 300px;
 .weiten {
   grid-area: weiten;
   text-align: center;
+
+  animation-name: weiten;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes weiten {
+0% {
+letter-spacing: 0em;
+}
+
+30% {
+  letter-spacing: 4em;
+}
+97% {
+  letter-spacing: 0.5em;
+}
 }
 
 .teil4 {
@@ -316,7 +436,7 @@ margin-top: 300px;
   "ruf . . . . an . . . . enden"
   ". . . . . . . . . . ."
   ". . . . . wohlan . . . . ."
-  ". . . . . herz2 . . . . ."
+  ". . . . herz2 herz2 herz2 . . . ."
   ". . . . . nimm . . . . ."
   "gesunde gesunde gesunde gesunde gesunde gesunde gesunde . . . ."
 }
@@ -389,15 +509,48 @@ position: absolute;
   grid-area: ruf;
   align-self: end;
 
+  animation-name: welle;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+
 }
+
+@keyframes welle {
+0% {
+}
+
+50% {
+  margin-bottom: 100%;
+  }
+  100% {
+}
+}
+
 .an {
   grid-area: an;
   align-self: end;
+
+  animation-name: welle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-delay: 1s;
 }
 .enden {
   grid-area: enden;
   align-self: end;
   text-align: end;
+
+  animation-name: welle;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-delay: 2s;
+
 }
 
 .wohlan {
@@ -412,6 +565,11 @@ position: absolute;
   font-size: 400%;
   text-align: center;
   margin: auto;
+
+  animation-name: herz;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
 
 .nimm {
@@ -431,6 +589,10 @@ position: absolute;
 
 @media all and (max-width: 39em) /*mobil*/ {
 
+  html{
+  font-size: 13px;
+  }
+
   .raster1 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -449,7 +611,7 @@ position: absolute;
     ". weisheit weisheit weisheit weisheit"
     ". . . tugend tugend"
     ". . zeit zeit ."
-    ". . . dauern dauern"
+    ". . dauern dauern dauern"
  }
 
  .teil2 {
@@ -460,7 +622,7 @@ position: absolute;
 
    grid-template-areas:
    ". muss muss muss ."
-   ". herz herz herz ."
+   "herz herz herz herz herz"
    ". rufe rufe rufe ."
    ". . bereit bereit bereit"
    "neu neu neu neu neu"
@@ -470,10 +632,22 @@ position: absolute;
    "zauber zauber zauber zauber zauber"
  }
 
+ .anfang {
+   grid-area: anfang;
+   font-size: 350%;
+ }
+
+
+ .zauber {
+   grid-area: zauber;
+   font-size: 350%;
+   text-align: end;
+ }
+
  .teil3 {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 120px 600px 500px 1fr 1fr 1fr 400px 400px 200px 400px 800px 600px 1fr;
+   grid-template-rows: 120px 600px 500px 200px 100px 30px 400px 400px 200px 400px 800px 600px 1fr;
    grid-gap: 10px;
 
    grid-template-areas:
@@ -482,20 +656,43 @@ position: absolute;
    "sollen sollen . . heiter"
    "raum1 raum1 raum1 raum1 raum1"
    ". um um um ."
-   "raum2 raum2 . durchschreiten durchschreiten"
+   "raum2 raum2 raum2 durchschreiten durchschreiten"
    ". heimat heimat . ."
    ". . . . ."
    ". fesseln fesseln fesseln ."
-   "engen engen . . ."
+   "engen engen engen . ."
    ". stuf stuf stuf ."
    ". heben heben heben ."
-   ". weiten weiten weiten ."
+   "weiten weiten weiten weiten weiten"
+ }
+
+ .raum1 {
+   grid-area: raum1;
+   font-size: 800%;
+   align-self: start;
+   text-align: start;
+ }
+
+ .um {
+   grid-area: um;
+   font-size: 800%;
+   transform: rotate(90deg);
+   align-self: end;
+   text-align: start;
+ }
+ .raum2 {
+   grid-area: raum2;
+   font-size: 800%;
+ }
+ .durchschreiten {
+   grid-area: durchschreiten;
+margin-bottom: 25px;
  }
 
  .teil4 {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 420px 280px 100px 100px 600px 600px 120px 110px 200px 800px;
+   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 225px 140px 100px 100px 600px 600px 120px 110px 200px 800px;
    grid-gap: 10px;
    margin-top: 600px;
    margin-bottom: 40px;
@@ -522,8 +719,24 @@ position: absolute;
  }
 
 
-
-
+ .neuen {
+   grid-area: neuen;
+   font-size: 800%;
+   align-self: start;
+   text-align: start;
+ }
+ .raeumen {
+   grid-area: raeumen;
+   font-size: 800%;
+   align-self: start;
+   text-align: start;
+   transform: rotate(90deg);
+ }
+ .gesunde {
+   grid-area: gesunde;
+   font-size: 350%;
+   align-self: end;
+ }
 
 
 
