@@ -68,7 +68,7 @@ font-family: 'Source Code Pro', monospace;
   width: 2em;
   opacity: 0;
   animation: type4 1s steps(3, end);
-  animation-delay: 0.2s;
+  animation-delay: 1s;
   animation-fill-mode: both;
 
 }
@@ -95,7 +95,7 @@ grid-template-rows: 300px;
 text-align: end;
 transition: all 10s ease;
 }
-.bluete:hover {
+.bluete.checkview.isinview {
   transition: all 3s ease-out;
   padding-top:calc(5rem);
   color: cyan;
@@ -107,7 +107,7 @@ transition: all 10s ease;
   transition: all 10s ease;
 
 }
-.jugend:hover {
+.jugend.checkview.isinview {
   transition: all 3s ease-out;
   padding-top:calc(5rem);
   color: cyan;
@@ -116,12 +116,13 @@ transition: all 10s ease;
 .lebensstufe {
   grid-area: lebensstufe;
 transform: rotate(-4deg);
+}
 
-animation-name: rotation;
-animation-duration: 3s;
-animation-iteration-count: infinite;
-animation-fill-mode: both;
-
+.lebensstufe.checkview.isinview{
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
 
 @keyframes rotation {
@@ -279,7 +280,7 @@ margin-top: 300px;
 
   grid-template-areas:
   ". . hilft hilft hilft . . . . . ."
-  ". . . . . . leben . . . ."
+  ". . . . . leben leben leben . . ."
   ". sollen sollen . . . . . . heiter ."
   ". . raum1 raum1 raum1 raum1 . . . . ."
   ". . . . . . um um . . ."
@@ -304,17 +305,23 @@ margin-top: 300px;
   animation-duration: 7s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
+
 }
 @keyframes lebenrund {
 10% {
   transform: rotate(0deg);
+  transform-origin: 0% 0%;
 }
 
 50% {
   transform: rotate(180deg);
+  transform-origin: 0% 0%;
+
 }
 100% {
   transform: rotate(360deg);
+  transform-origin: 0% 0%;
+
 }
 }
 
@@ -652,7 +659,7 @@ position: absolute;
 
    grid-template-areas:
    "hilft hilft hilft hilft .."
-   ". leben leben leben ."
+   ". . . leben leben"
    "sollen sollen . . heiter"
    "raum1 raum1 raum1 raum1 raum1"
    ". um um um ."
