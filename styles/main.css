@@ -1,5 +1,5 @@
 html{
-font-size: 15px;
+font-size: 22px;
 }
 
 * {
@@ -29,9 +29,9 @@ font-family: 'Source Code Pro', monospace;
    ". . . . . . . . . . ."
    ". . . lebensstufe lebensstufe lebensstufe lebensstufe . . . ."
    ". . . . . weisheit weisheit weisheit weisheit . ."
-   ". . . . . . . . . tugend tugend"
+   ". . . . . . . tugend tugend tugend tugend"
    ". . . . . . zeit zeit . . ."
-   ". . . . . . . . dauern dauern dauern"
+   ". . . . . . dauern dauern dauern dauern dauern"
 }
 
 .stu {
@@ -133,12 +133,6 @@ transform: rotate(-4deg);
 }
 .weisheit {
   grid-area: weisheit;
-transform: rotate(6deg);
-animation-name: rotation;
-animation-duration: 3s;
-animation-iteration-count: infinite;
-animation-fill-mode: both;
-animation-delay: 1.8s;
 }
 .tugend {
   grid-area: tugend;
@@ -241,7 +235,7 @@ margin-top: 300px;
 }
 .anfang {
   grid-area: anfang;
-  font-size: 550%;
+  font-size: 360%;
   animation-name: seitenflow;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -252,7 +246,7 @@ margin-top: 300px;
 
 .zauber {
   grid-area: zauber;
-  font-size: 550%;
+  font-size: 360%;
   text-align: end;
   animation-name: seitenflow
   animation-duration: 5s;
@@ -284,8 +278,8 @@ margin-top: 300px;
   ". sollen sollen . . . . . . heiter ."
   ". . raum1 raum1 raum1 raum1 . . . . ."
   ". . . . . . um um . . ."
-  ". . . . raum2 raum2 raum2 . . durchschreiten durchschreiten"
-  ". . heimat . . . . . . . ."
+  ". . . . raum2 raum2 raum2 . . . ."
+  ". . heimat . . . . . . durchschreiten durchschreiten"
   ". . . . . . . . . . ."
   ". . . fesseln . . . . . . ."
   "engen engen . . . . . . . . ."
@@ -351,7 +345,7 @@ margin-top: 300px;
 .durchschreiten {
   grid-area: durchschreiten;
   text-align: end;
-  align-self: end;
+  align-self:baseline;
   margin-bottom: 45px;
 }
 
@@ -368,20 +362,18 @@ margin-top: 300px;
   grid-area: engen;
 
   animation-name: engen;
-  animation-duration: 8s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
 @keyframes engen {
 0% {
 letter-spacing: 0em;
 }
 
-20% {
-  letter-spacing: -0.15em;
-}
-80% {
-  letter-spacing: -0.1em;
+
+100% {
+  letter-spacing: -0.2em;
 }
 }
 
@@ -411,18 +403,16 @@ letter-spacing: 0em;
 letter-spacing: 0em;
 }
 
-30% {
-  letter-spacing: 4em;
+80% {
+  letter-spacing: 6em;
 }
-97% {
-  letter-spacing: 0.5em;
-}
+
 }
 
 .teil4 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 420px 280px 100px 100px 600px 600px 120px 110px 200px 800px;
+  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 620px 300px 350px 100px 600px 600px 120px 110px 320px 800px;
   grid-gap: 10px;
   margin-top: 600px;
   margin-bottom: 40px;
@@ -436,10 +426,10 @@ letter-spacing: 0em;
   ". entraffen entraffen entraffen entraffen entraffen entraffen entraffen entraffen entraffen ."
   ". vielleicht . . . . . . . . ."
   ". . . todesstunde . . . . . . ."
-  ". . . . neuen neuen neuen neuen neuen neuen neuen"
+  "neuen neuen neuen neuen neuen neuen neuen neuen neuen neuen neuen"
   ". . . . raeumen raeumen raeumen raeumen raeumen raeumen raeumen"
   ". . . . raeumen raeumen raeumen raeumen raeumen raeumen raeumen"
-  ". . . . . . . . senden senden senden"
+  ". . . . . . senden senden senden senden senden"
   "ruf . . . . an . . . . enden"
   ". . . . . . . . . . ."
   ". . . . . wohlan . . . . ."
@@ -448,7 +438,7 @@ letter-spacing: 0em;
   "gesunde gesunde gesunde gesunde gesunde gesunde gesunde . . . ."
 }
 
-.heimisch {
+/*.heimisch {
   grid-area: heimisch;
 background-color: white;
 border-radius: 600px;
@@ -456,8 +446,7 @@ border-radius: 600px;
   border: 1px solid black;
 width: 200px;
 height: 200px;
-
-}
+}*/
 .heimisch2 {
   grid-area: heimisch2;
 margin-top: 100px;
@@ -586,7 +575,7 @@ position: absolute;
 }
 .gesunde {
   grid-area: gesunde;
-  font-size: 550%;
+  font-size: 360%;
   align-self: end;
 }
 
@@ -597,7 +586,7 @@ position: absolute;
 @media all and (max-width: 39em) /*mobil*/ {
 
   html{
-  font-size: 13px;
+  font-size: 18px;
   }
 
   .raster1 {
@@ -614,11 +603,15 @@ position: absolute;
     ". . bluete bluete bluete"
     "jugend jugend jugend jugend ."
     ". . . . ."
-    ". lebensstufe lebensstufe lebensstufe ."
-    ". weisheit weisheit weisheit weisheit"
-    ". . . tugend tugend"
-    ". . zeit zeit ."
-    ". . dauern dauern dauern"
+    ". lebensstufe lebensstufe lebensstufe lebensstufe"
+    "weisheit weisheit weisheit weisheit ."
+    ". . tugend tugend tugend"
+    "zeit zeit zeit . ."
+    ". dauern dauern dauern dauern"
+ }
+
+ .lebensstufe{
+   text-align: end;
  }
 
  .teil2 {
@@ -641,20 +634,20 @@ position: absolute;
 
  .anfang {
    grid-area: anfang;
-   font-size: 350%;
+   font-size: 320%;
  }
 
 
  .zauber {
    grid-area: zauber;
-   font-size: 350%;
+   font-size: 320%;
    text-align: end;
  }
 
  .teil3 {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 120px 600px 500px 200px 100px 30px 400px 400px 200px 400px 800px 600px 1fr;
+   grid-template-rows: 120px 600px 500px 200px 150px 90px 400px 400px 200px 400px 800px 600px 1fr;
    grid-gap: 10px;
 
    grid-template-areas:
@@ -663,8 +656,8 @@ position: absolute;
    "sollen sollen . . heiter"
    "raum1 raum1 raum1 raum1 raum1"
    ". um um um ."
-   "raum2 raum2 raum2 durchschreiten durchschreiten"
-   ". heimat heimat . ."
+   "raum2 raum2 raum2 . ."
+   ". heimat heimat durchschreiten durchschreiten"
    ". . . . ."
    ". fesseln fesseln fesseln ."
    "engen engen engen . ."
@@ -694,7 +687,8 @@ position: absolute;
  .durchschreiten {
    grid-area: durchschreiten;
 margin-bottom: 25px;
- }
+align-self: baseline;
+}
 
  .teil4 {
    display: grid;
@@ -741,7 +735,7 @@ margin-bottom: 25px;
  }
  .gesunde {
    grid-area: gesunde;
-   font-size: 350%;
+   font-size: 320%;
    align-self: end;
  }
 
