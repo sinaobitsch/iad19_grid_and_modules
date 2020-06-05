@@ -70,11 +70,11 @@ text-align: end;
 }
 .bluete.checkview.isinview {
   transition: 2s ease-out;
+  animation-delay: 6s;
+
   padding-top:calc(3rem);
   color: white;
   animation-fill-mode: both;
-  animation-delay: 3s;
-
 }
 
 .jugend{
@@ -371,7 +371,7 @@ letter-spacing: 0em;
 }
 .weiten.checkview.isinview{
     animation-name: weiten;
-    animation-duration: 5s;
+    animation-duration: 9s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
@@ -672,7 +672,7 @@ align-self: baseline;
 }
 .weiten.checkview.isinview{
     animation-name: weiten;
-    animation-duration: 5s;
+    animation-duration: 7s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
