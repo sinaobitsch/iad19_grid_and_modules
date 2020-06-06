@@ -515,7 +515,6 @@ position: absolute;
   opacity: 0;
   animation-delay: 1s;
   animation-fill-mode: both;
-
 }
 .reise {
   grid-area: reise;
@@ -558,12 +557,14 @@ position: absolute;
   grid-area: ruf;
   align-self: end;
 
+
+}
+.ruf.checkview.isinview{
   animation-name: welle;
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
   animation-direction:alternate-reverse;
-
 }
 
 @keyframes welle {
@@ -580,7 +581,8 @@ position: absolute;
 .an {
   grid-area: an;
   align-self: end;
-
+}
+.an.checkview.isinview{
   animation-name: welle;
   animation-duration: 5s;
   animation-iteration-count: 1;
@@ -593,13 +595,14 @@ position: absolute;
   align-self: end;
   text-align: end;
 
-  animation-name: welle;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-delay: 1.5s;
-
+}
+.enden.checkview.isinview{
+    animation-name: welle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-delay: 1.5s;
 }
 
 .wohlan {
