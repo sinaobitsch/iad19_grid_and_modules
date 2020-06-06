@@ -9,14 +9,14 @@ font-size: 22px;
 body {
 font-family: 'Source Code Pro', monospace;
    background-color: white;
-   margin-left: 20px;
-   margin-right: 20px;
  }
 
  .raster1 {
+   margin-left: 20px;
+   margin-right: 20px;
    display: grid;
    grid-template-columns: repeat(11, 1fr);
-   grid-template-rows: 1fr 500px 200px 300px 150px 600px 150px 600px 150px 600px;
+   grid-template-rows: 1fr 300px 400px 300px 150px 600px 150px 600px 150px 600px;
    grid-gap: 10px;
    margin-top: 40vh;
    overflow: hidden;
@@ -24,7 +24,7 @@ font-family: 'Source Code Pro', monospace;
    grid-template-areas:
    ". . . . . stu . . . . ."
    ". . . . . . . . . . ."
-   ". . . . . . . . bluete bluete bluete"
+   ". . . . . . . bluete bluete bluete bluete"
    "jugend jugend jugend jugend . . . . . . ."
    ". . . . . . . . . . ."
    ". . . lebensstufe lebensstufe lebensstufe lebensstufe . . . ."
@@ -38,6 +38,7 @@ font-family: 'Source Code Pro', monospace;
   grid-area: stu;
   margin: auto;
   overflow: hidden;
+  font-size: 330%;
 
   width: 3.7em;
   opacity: 0;
@@ -63,28 +64,23 @@ font-family: 'Source Code Pro', monospace;
 
 .bluete {
   grid-area: bluete;
-grid-template-rows: 300px;
 text-align: end;
 }
 .bluete.checkview.isinview {
-  transition: 3s ease-out;
+  transition: 6s ease-out;
   padding-top:calc(3rem);
   opacity: 0;
-  animation-fill-mode: both;
-  animation-delay: 1s;
+  transition-delay: 1s;
 }
 
 .jugend{
   grid-area: jugend;
-  transition: all 10s ease;
-
 }
 .jugend.checkview.isinview {
-  transition: 4s ease-out;
+  transition: 6s ease-out;
   padding-top:calc(3rem);
   opacity: 0;
-  animation-fill-mode: both;
-  animation-delay: 1s;
+  transition-delay: 0.5s;
 }
 .lebensstufe {
   grid-area: lebensstufe;
@@ -115,9 +111,11 @@ transform: rotate(4deg);
 
 
 .teil2 {
+  margin-left: 20px;
+  margin-right: 20px;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 120px 30px 300px 800px 600px 1fr 500px 400px 1fr 1fr 1fr;
+  grid-template-rows: 120px 30px 300px 800px 600px 1fr 500px 400px 700px;
   grid-gap: 10px;
   overflow: hidden;
 
@@ -197,15 +195,16 @@ margin-top: 300px;
 .anfang {
   grid-area: anfang;
   font-size: 360%;
-
+  overflow: hidden;
+  display: inline-block;
 }
 
 .anfang.checkview.isinview {
-  transition: 3s ease-out;
-  padding-left:calc(30%);
-  animation-iteration-count: 1;
+  transition: 4s linear;
+  padding-left:calc(4rem);
+  opacity: 0;
   animation-fill-mode: both;
-  animation-direction: alternate;
+  animation-delay: 4s;
 }
 
 
@@ -213,19 +212,21 @@ margin-top: 300px;
   grid-area: zauber;
   font-size: 360%;
   text-align: end;
+  overflow: hidden;
 }
 
 .zauber.checkview.isinview {
-  transition: 3s ease-out;
-  padding-right:calc(5%);
-  animation-iteration-count: 1;
+  transition: 4s linear;
+  padding-right:calc(4rem);
+  opacity: 0;
   animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 
 
 .teil3 {
+  margin-left: 20px;
+  margin-right: 20px;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: 120px 600px 500px 1fr 1fr 1fr 400px 400px 200px 400px 800px 600px 1fr;
@@ -236,7 +237,7 @@ margin-top: 300px;
   grid-template-areas:
   ". . hilft hilft hilft . . . . . ."
   ". . . . . leben leben leben . . ."
-  ". sollen sollen . . . . . . heiter ."
+  ". sollen sollen . . . . . heiter heiter ."
   ". . raum1 raum1 raum1 raum1 . . . . ."
   ". . . . . . um um . . ."
   ". . . . raum2 raum2 raum2 . . . ."
@@ -264,7 +265,7 @@ margin-top: 300px;
   word-wrap: break-word;
   white-space: nowrap;
   animation: typing1 2s steps(9) forwards;
-  animation-delay: 0.6s;
+  animation-delay: 1.6s;
 }
 @keyframes typing1 {
   from {
@@ -293,36 +294,49 @@ margin-top: 300px;
   grid-area: heiter;
 text-align: center;
 align-items: center;
+letter-spacing: 0.5em;
+
 }
-.heiter :nth-child(1) {
+.heiter span {
+display: block;
+float: left;
+}
+.heiter.checkview.isinview :nth-child(1) {
   animation-name: heiter;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-}.heiter :nth-child(2) {
-  animation-name: heiter;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-delay: 0.5s;
-}.heiter :nth-child(3) {
-  animation-name: heiter;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-delay: 1s;
-}.heiter :nth-child(4) {
-  animation-name: heiter;
-  animation-duration: 0.3s;
-  animation-iteration-count: 1;
-  animation-delay: 1.5s;
-}.heiter :nth-child(5) {
-  animation-name: heiter;
-  animation-duration: 0.3s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-delay: 2s;
-}.heiter :nth-child(6) {
+
+
+}.heiter.checkview.isinview :nth-child(2) {
   animation-name: heiter;
-  animation-duration: 0.3s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
-  animation-delay: 2.5s;
+  animation-delay: 2.3s;
+
+}.heiter.checkview.isinview :nth-child(3) {
+  animation-name: heiter;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 2.6s;
+
+}.heiter.checkview.isinview :nth-child(4) {
+  animation-name: heiter;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 2.9s;
+
+}.heiter.checkview.isinview :nth-child(5) {
+  animation-name: heiter;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 3.2s;
+
+}.heiter.checkview.isinview :nth-child(6) {
+  animation-name: heiter;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 3.5s;
 }
 
 
@@ -331,16 +345,13 @@ align-items: center;
     font-size: 0;
     opacity: 0;
   }
-  90% {
+  70% {
     opacity: 1;
-    transform-origin: 50% 50%;
-
+transform: translateY(-0.8em);
   }
   100% {
-    font-size: 140%;
     opacity: 1;
-    padding-right:calc(0.3rem);
-    transform-origin: 50% 50%;
+
   }
 }
 
@@ -384,7 +395,7 @@ align-items: center;
     animation-duration: 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 1.5s;
+    animation-delay: 2.5s;
 }
 @keyframes engen {
 0% {
@@ -408,25 +419,23 @@ letter-spacing: 0em;
 }
 .heben.checkview.isinview{
   animation-name: heben;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 0.5s;
+  animation-delay: 1s;
+animation-timing-function: linear;
 }
 @keyframes heben {
 0% {
 letter-spacing: 0em;
 }
 
-20% {
-font-size: 90%;
-opacity: 0.2;
-padding-top:calc(0.5rem);
+30% {
 }
 100% {
-font-size: 120%;
+font-size: 170%;
 opacity: 1;
-padding-top:calc(1rem);
+transform: translateY(-4em);
 }
 }
 
@@ -449,13 +458,17 @@ padding-top:calc(1rem);
 100% {
   letter-spacing: 5em;
   opacity: 0;
+  font-size: 110%;
+
 }
 }
 
 .teil4 {
+  margin-left: 20px;
+  margin-right: 20px;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 520px 300px 350px 100px 600px 600px 120px 110px 320px 800px;
+  grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 500px 720px 300px 350px 100px 600px 600px 120px 110px 320px 1200px 200px;
   grid-gap: 10px;
   margin-top: 600px;
   margin-bottom: 40px;
@@ -481,17 +494,10 @@ padding-top:calc(1rem);
   ". . . . herz2 herz2 herz2 . . . ."
   ". . . . . nimm . . . . ."
   "gesunde gesunde gesunde gesunde gesunde gesunde gesunde . . . ."
+  "impressum impressum impressum impressum impressum impressum impressum impressum impressum impressum impressum"
+
 }
 
-/*.heimisch {
-  grid-area: heimisch;
-background-color: white;
-border-radius: 600px;
-  justify-content: center;
-  border: 1px solid black;
-width: 200px;
-height: 200px;
-}*/
 .heimisch2 {
   grid-area: heimisch2;
 margin-top: 100px;
@@ -510,11 +516,12 @@ position: absolute;
   text-align:left;
 }
 .erschlaffen.checkview.isinview {
-  transition: 2s ease-out;
-  padding-top:calc(11rem);
+  transition: 7s ease-out;
+  padding-top:calc(4rem);
+  transition-delay: 1.5s;
   opacity: 0;
-  animation-delay: 1s;
   animation-fill-mode: both;
+
 }
 .reise {
   grid-area: reise;
@@ -539,6 +546,7 @@ position: absolute;
   font-size: 1000%;
   align-self: start;
   text-align: start;
+  margin-top: 300px;
 }
 .raeumen {
   grid-area: raeumen;
@@ -561,20 +569,22 @@ position: absolute;
 }
 .ruf.checkview.isinview{
   animation-name: welle;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
   animation-fill-mode: both;
-  animation-direction:alternate-reverse;
+  animation-direction:alternate;
+  animation-timing-function: ease-in-out;
+animation-delay: 1.5s;
 }
 
 @keyframes welle {
 0% {
 }
 
-  50% {
-    margin-bottom: 4rem;
-}
+
 100% {
+  margin-bottom: 4rem;
+
 }
 }
 
@@ -584,11 +594,13 @@ position: absolute;
 }
 .an.checkview.isinview{
   animation-name: welle;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
   animation-fill-mode: both;
   animation-direction: alternate;
-  animation-delay: 1s;
+  animation-delay: 2.5s;
+  animation-timing-function: ease-in-out;
+
 }
 .enden {
   grid-area: enden;
@@ -602,7 +614,8 @@ position: absolute;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
     animation-direction: alternate;
-    animation-delay: 1.5s;
+    animation-delay: 3.5s;
+    animation-timing-function: ease-in-out;
 }
 
 .wohlan {
@@ -634,10 +647,21 @@ position: absolute;
   grid-area: gesunde;
   font-size: 360%;
   align-self: end;
+  margin-bottom: 190px;
 }
 
-.ipmressum {
-text-align: end;}
+
+.impressum {
+  grid-area: impressum;
+
+  font-size: 60%;
+line-height: 1.7em;  letter-spacing: 0.05em;
+text-align: end;
+align-self: end;
+
+
+
+}
 
 
 /*_______________________________________________*/
@@ -650,6 +674,8 @@ text-align: end;}
   }
 
   .raster1 {
+    margin-left: 20px;
+    margin-right: 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr 1fr 600px 300px 300px 150px 600px 150px 600px 150px 600px;
@@ -675,6 +701,8 @@ text-align: end;}
  }
 
  .teil2 {
+   margin-left: 20px;
+   margin-right: 20px;
    display: grid;
    grid-template-columns: repeat(5, 1fr);
    grid-template-rows: 120px 30px 300px 800px 600px 1fr 500px 400px 1fr 1fr 1fr;
@@ -697,6 +725,14 @@ text-align: end;}
    font-size: 320%;
  }
 
+ .anfang.checkview.isinview {
+   transition: 3s linear;
+   padding-left:calc(2rem);
+   opacity: 0;
+   animation-fill-mode: both;
+   animation-delay: 4s;
+ }
+
 
  .zauber {
    grid-area: zauber;
@@ -704,7 +740,17 @@ text-align: end;}
    text-align: end;
  }
 
+ .zauber.checkview.isinview {
+   transition: 3s linear;
+   padding-right:calc(2rem);
+   opacity: 0;
+   animation-fill-mode: both;
+   animation-delay: 4s;
+ }
+
  .teil3 {
+   margin-left: 20px;
+   margin-right: 20px;
    display: grid;
    grid-template-columns: repeat(5, 1fr);
    grid-template-rows: 120px 600px 500px 200px 170px 90px 400px 400px 200px 400px 800px 600px 1fr;
@@ -713,13 +759,13 @@ text-align: end;}
    grid-template-areas:
    "hilft hilft hilft hilft .."
    ". . . leben leben"
-   "sollen sollen . . heiter"
+   "sollen sollen . heiter heiter"
    "raum1 raum1 raum1 raum1 raum1"
    ". um um um ."
    "raum2 raum2 raum2 . ."
-   ". heimat heimat durchschreiten durchschreiten"
+   "heimat heimat durchschreiten durchschreiten durchschreiten"
    ". . . . ."
-   ". fesseln fesseln fesseln ."
+   ". . fesseln fesseln ."
    "engen engen engen . ."
    ". stuf stuf stuf ."
    ". heben heben heben ."
@@ -731,6 +777,10 @@ text-align: end;}
    font-size: 800%;
    align-self: start;
    text-align: start;
+ }
+
+ .heiter{
+   letter-spacing: 0.3em;
  }
 
  .um {
@@ -745,6 +795,11 @@ text-align: end;}
    grid-area: durchschreiten;
 margin-bottom: 25px;
 align-self: baseline;
+}
+
+.fesseln{
+  text-align: end;
+
 }
 
 .weiten {
@@ -764,13 +819,16 @@ align-self: baseline;
 
 100% {
   letter-spacing: 2em;
+  opacity: 0;
 }
 }
 
  .teil4 {
+   margin-left: 20px;
+   margin-right: 20px;
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 300px 325px 140px 200px 100px 600px 600px 120px 110px 200px 800px;
+   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 400px 325px 140px 200px 100px 600px 600px 120px 110px 200px 800px 200px;
    grid-gap: 10px;
    margin-top: 600px;
    margin-bottom: 40px;
@@ -780,13 +838,13 @@ align-self: baseline;
    ". heimisch2 heimisch2 heimisch2 ."
    ". . . droht ."
    ". . . . erschlaffen"
-   ". reise reise reise reise"
+   "reise reise reise reise ."
    ". entraffen entraffen entraffen entraffen"
    "vielleicht . . . ."
    ". todesstunde . . ."
    "neuen neuen neuen neuen neuen"
-   ". raeumen raeumen raeumen raeumen"
-   ". raeumen raeumen raeumen raeumen"
+   "raeumen raeumen raeumen raeumen ."
+   "raeumen raeumen raeumen raeumen ."
    ". . senden senden senden"
    "ruf . an enden enden"
    ". . . . ."
@@ -794,9 +852,13 @@ align-self: baseline;
    ". herz2 herz2 herz2 ."
    ". nimm nimm nimm ."
    "gesunde gesunde gesunde gesunde gesunde"
+   "impressum impressum impressum impressum impressum"
+
  }
 
-
+.heimisch2{
+  text-align: left;
+}
  .neuen {
    grid-area: neuen;
    font-size: 800%;
