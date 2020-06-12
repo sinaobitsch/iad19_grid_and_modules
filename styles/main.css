@@ -774,7 +774,7 @@ align-self: end;
 
  .raum1 {
    grid-area: raum1;
-   font-size: 800%;
+   font-size: 600%;
    align-self: start;
    text-align: start;
  }
@@ -785,11 +785,11 @@ align-self: end;
 
  .um {
    grid-area: um;
-   font-size: 800%;
+   font-size: 600%;
  }
  .raum2 {
    grid-area: raum2;
-   font-size: 800%;
+   font-size: 600%;
  }
  .durchschreiten {
    grid-area: durchschreiten;
@@ -828,7 +828,7 @@ align-self: baseline;
    margin-right: 20px;
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 400px 325px 140px 200px 100px 600px 600px 120px 110px 200px 800px 200px;
+   grid-template-rows: 260px 600px 10px 600px 400px 200px 400px 400px 600px 140px 200px 100px 600px 600px 120px 110px 200px 800px 200px;
    grid-gap: 10px;
    margin-top: 600px;
    margin-bottom: 40px;
@@ -861,13 +861,13 @@ align-self: baseline;
 }
  .neuen {
    grid-area: neuen;
-   font-size: 800%;
+   font-size: 600%;
    align-self: start;
    text-align: start;
  }
  .raeumen {
    grid-area: raeumen;
-   font-size: 800%;
+   font-size: 600%;
    align-self: start;
    text-align: start;
    transform: rotate(90deg);
